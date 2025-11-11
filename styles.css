@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #121212;
+  color: #eee;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#editorContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* HEADER / CONTROLS */
+#topBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1f1f1f;
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+}
+
+#topBar h1 {
+  font-size: 1.4em;
+  margin-bottom: 6px;
+  color: #4caf50;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  background: #3a3a3a;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn:hover { background: #4caf50; }
+
+/* MAIN LAYOUT */
+#workspace {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+#previewSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 8px;
+}
+
+#videoPreview {
+  max-width: 90%;
+  max-height: 65vh;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #000;
+}
+
+#timelineWrapper {
+  background: #181818;
+  border-top: 1px solid #333;
+  height: 100px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+#timeline {
+  background: #222;
+  height: 80px;
+  cursor: grab;
+  display: block;
+}
+#timeline:active { cursor: grabbing; }
