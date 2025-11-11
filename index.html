@@ -8,27 +8,41 @@
 <body>
   <div id="editorContainer">
     <header id="topBar">
-      <h1>🎬 TerraEdit</h1>
-      <div id="controls">
-        <input id="fileInput" type="file" accept="video/*" multiple />
-        <button id="playBtn" class="btn">▶ Play</button>
-        <button id="pauseBtn" class="btn">⏸ Pause</button>
-        <label>Zoom
-          <input id="zoom" type="range" min="50" max="1000" value="400" />
-        </label>
-        <span id="timeDisplay">00:00 / 00:00</span>
-      </div>
+      <input id="fileInput" type="file" accept="video/*,image/*" multiple />
     </header>
 
     <main id="workspace">
       <section id="previewSection">
-        <video id="videoPreview" controls crossorigin="anonymous"></video>
+        <div id="previewContainer">
+          <video id="videoPreview" controls crossorigin="anonymous"></video>
+
+          <div id="controls">
+            <button id="playBtn" class="btn">▶️</button>
+            <span id="timeDisplay">00:00 / 00:00</span>
+          </div>
+        </div>
       </section>
 
-      <section id="timelineWrapper">
-        <canvas id="timeline" height="80"></canvas>
-      </section>
+ <section id="mediaBin">
+  <label class="btn" style="background-color: #1c1c1c; border: #1c1c1c;">
+    <img id="uploadIcon" style="width: 30px; height: 30px;" src="Galleri.png">
+    <input id="fileInput" type="file" accept="video/*,image/*" multiple hidden />
+  </label>
+  <h3>Media Bin</h3>
+  <div id="clipList"></div>
+</section>
+
     </main>
+
+    <div id="timelineControls">
+  <label>Zoom
+    <input id="zoom" type="range" min="50" max="1000" value="400" />
+  </label>
+</div>
+
+    <section id="timelineWrapper">
+      <canvas id="timeline" height="80"></canvas>
+    </section>
   </div>
 
   <script src="editor.js"></script>
